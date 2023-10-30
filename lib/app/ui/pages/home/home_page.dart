@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../reatividade/reatividade_page.dart';
+import '../tipos/tipos_reativos_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,17 +13,23 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home Page'),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '0',
-              style: TextStyle(fontSize: 20),
-            ),
+            ElevatedButton(
+                onPressed: () {
+                  Get.to(() => const ReatividadePage());
+                },
+                child: const Text('Exemp. Reatividade')),
+                const SizedBox(height: 20),
+            ElevatedButton(
+                onPressed: () {
+                  Get.to(() => const TiposReativosPage());
+                },
+                child: const Text('Tipos Reativos')),
+
+
           ],
         ),
       ),
